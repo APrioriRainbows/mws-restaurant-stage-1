@@ -38,6 +38,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  display: flex;
 }
 #footer {
   background-color: #444;
@@ -273,3 +274,54 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+/*===================MEDIA QUERIES=================*/
+
+/*iphone SE and very small screens*/
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+    nav {
+    padding: 20px 0px;
+    }
+    
+    #maincontent {
+	display: flex;
+	flex-direction: column;
+    }
+
+    #restaurants-list {
+	display: flex;
+	align-items:center;
+	flex-direction: column;
+	align-content: stretch;
+	margin: 0px;
+	padding: 0px;
+    }
+   
+    #restaurants-list li{
+	display:flex;
+	align-items:center;
+	margin:2px;
+	padding: 0px;
+	justify-content: center;
+	flex-direction: column;
+    }
+
+    .filter-options{
+	padding: 5px 0px;
+	margin: 0px;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	height: inherit;
+    }
+   
+    #map-container {
+	width: 100%;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){ ... }
+
+@media only screen and (min-width: 768px) and (max-width: 991px){ ... }
+
+@media only screen and (min-width: 992px) and (max-width: 1999px){ ... }

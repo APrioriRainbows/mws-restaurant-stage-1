@@ -295,8 +295,9 @@ nav h1 a {
 	align-content: stretch;
 	margin: 0px;
 	padding: 0px;
+	width: 100%;
     }
-   
+
     #restaurants-list li{
 	display:flex;
 	align-items:center;
@@ -305,6 +306,11 @@ nav h1 a {
 	justify-content: center;
 	flex-direction: column;
     }
+
+    #restaurant-container {
+	background-color: blue;
+    }
+
 
     .filter-options{
 	padding: 5px 0px;

@@ -334,6 +334,7 @@ nav h1 a {
 	margin:2px;
 	padding: 0px;
 	justify-content: center;
+	box-sizing: border-box;
 	flex-direction: column;
     }
     #reviews-list li{
@@ -357,14 +358,119 @@ nav h1 a {
     #map-container {
 	width: 100%;
     }
+
     td, p {
 	font-size: 1.25em;
     }
+
     li, a{
 	font-size: 1em;
     }
+}
 
-@media only screen and (min-width: 480px) and (max-width: 767px){ ... }
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    nav {
+	padding: 20px 0px;
+	margin: auto 0px;
+    
+    }
+    nav h1 a{
+	font-size: 1.5em;
+	text-align: center;
+	letter-spacing: 5px;
+    }
+
+    .inside header{
+	position: static;
+    }
+
+    .inside #footer {
+    position: static;
+    width: 100%;
+    box-sizing: border-box;
+    }
+    
+    #maincontent {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	min-height: inherit;
+    }
+
+    .inside #map-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	position: static;
+	height: 250px;
+    }
+    
+    #breadcrumb {
+	width: 100%;
+	margin: 0;
+	box-sizing: border-box;
+    }
+
+    #restaurants-list {
+	display: flex;
+	flex-direction: row;
+	margin: 0px;
+	padding: 0px;
+	flex-wrap: wrap;
+	width: 100%;
+    }
+
+    #restaurant-container, #reviews-container {
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	padding: 0px;
+	flex-wrap: wrap;
+	width: 100%;
+	align-items: center;
+    }
+   
+    #restaurants-list li{
+	display:flex;
+	align-items:center;
+	margin: 0px;
+	padding: 5px;
+	justify-content: center;
+	flex-direction: column; 
+	box-sizing: border-box;
+	width: 50%;
+   }
+
+    #reviews-list li{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	box-sizing: border-box;
+    }
+
+    .filter-options{
+	padding: 5px 0px; 
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	height: inherit;
+    }
+    
+    #map-container {
+	width: 100%;
+    }
+    
+    td, p {
+	font-size: 1.25em;
+    }
+    
+    li, a{
+	font-size: 1em;
+    }
+}
 
 @media only screen and (min-width: 768px) and (max-width: 991px){ ... }
 

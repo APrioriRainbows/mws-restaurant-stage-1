@@ -38,7 +38,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
-  display: flex;
 }
 #footer {
   background-color: #444;
@@ -280,24 +279,55 @@ nav h1 a {
 
 @media only screen and (min-width: 320px) and (max-width: 479px){
     nav {
-    padding: 20px 0px;
+	padding: 20px 0px;
+	margin: auto 0px;
+    
+    }
+    nav h1 a{
+	font-size: 1.5em;
+	text-align: center;
+	letter-spacing: 5px;
+    }
+    .inside header{
+	position: static;
+    }
+    .inside #footer {
+    position: static;
+    width: 100%;
+    box-sizing: border-box;
     }
     
     #maincontent {
 	display: flex;
 	flex-direction: column;
+	align-content: center;
+	min-height: inherit;
     }
 
-    #restaurants-list {
+    .inside #map-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	position: static;
+	height: 250px;
+    }
+    
+    #breadcrumb {
+	width: 100%;
+	margin: 0;
+	box-sizing: border-box;
+    }
+
+    #restaurants-list, #restaurant-container, #reviews-container {
 	display: flex;
 	align-items:center;
 	flex-direction: column;
-	align-content: stretch;
+	align-content: center;
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
     }
-
+   
     #restaurants-list li{
 	display:flex;
 	align-items:center;
@@ -306,11 +336,14 @@ nav h1 a {
 	justify-content: center;
 	flex-direction: column;
     }
-
-    #restaurant-container {
-	background-color: blue;
+    #reviews-list li{
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	box-sizing: border-box;
     }
-
 
     .filter-options{
 	padding: 5px 0px;
@@ -324,7 +357,12 @@ nav h1 a {
     #map-container {
 	width: 100%;
     }
-}
+    td, p {
+	font-size: 1.25em;
+    }
+    li, a{
+	font-size: 1em;
+    }
 
 @media only screen and (min-width: 480px) and (max-width: 767px){ ... }
 

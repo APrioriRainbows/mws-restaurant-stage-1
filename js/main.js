@@ -157,11 +157,13 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-
+  li.tabIndex = 0; //make it navigable by tab and keyboard for accessibility  
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = `image of ${restaurant.name}`; //add alt attr for accessibility
   li.append(image);
+  
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
@@ -176,6 +178,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('a');
+  more.setAttribute('title', `View hours of operation and reviews for ${restaurant.name}`);
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)

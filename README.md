@@ -9,7 +9,7 @@ I completed this project as part of the Grow With Google Front-End Nanodegree. I
 ### Requirements
 1. To view this website in its entirety you'll need a mapbox key.
 This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `private_key` in both index.html and restaurant.html  with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
-2.Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing. As such you will need a modern browser to view the website, and specifically to view the site offline.
+2. Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing. As such you will need a modern browser to view the website, and specifically to view the site offline.
 
 ### Viewing the site
 1. Clone the repo

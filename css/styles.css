@@ -98,6 +98,11 @@ nav h1 a {
     text-decoration: underline;
 }
 /* ====================== Map ====================== */
+#skip-map {
+    position: absolute;
+    z-index: 500;
+    right: 0px;
+}
 #map {
   height: 400px;
   width: 100%;

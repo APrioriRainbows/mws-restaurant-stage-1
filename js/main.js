@@ -88,6 +88,14 @@ initMap = () => {
 
   updateRestaurants();
 }
+
+/*Add skip button so that screen readers can skip map icons if they'd like*/
+const skipButton = document.getElementById('skip-map');
+const filterOptions = document.querySelector('.filter-options');
+skipButton.addEventListener('click',function(e){
+    filterOptions.focus({preventScroll:true});
+    console.log(document.activeElement);
+});
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,

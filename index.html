@@ -19,10 +19,11 @@
 
   <main id="maincontent">
     <section id="map-container" class="home-map-container">
+      <button id="skip-map" title="skip interactive map and view restaurant options and details">skip map</button>
       <div id="map" class="home-map" title="Map of restaurant locations. Select to see further details."></div>
     </section>
     <section>
-      <div class="filter-options">
+      <div class="filter-options" tabIndex=0;>
         <h2>Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="filter-options">
           <option value="all">All Neighborhoods</option>

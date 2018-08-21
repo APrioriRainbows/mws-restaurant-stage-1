@@ -1,5 +1,6 @@
 const cacheName = 'restaurant-pages';
 const cachedURLs = [
+//core assets, which don't include images
   '/',
   '/css/styles.css',
   '/js/main.js',
@@ -8,17 +9,6 @@ const cachedURLs = [
   '/js/dbhelper.js',
     '/index.html',
     '/restaurant.html',
-    '/img/10.jpg',
-    '/img/1.jpg',
-    '/img/2.jpg',
-    '/img/3.jpg',
-    '/img/4.jpg',
-    '/img/5.jpg',
-    '/img/6.jpg',
-    '/img/7.jpg',
-    '/img/8.jpg',
-    '/img/9.jpg',
-    '/data/restaurants.json'
 ];
 
 //service worker
@@ -28,7 +18,7 @@ self.addEventListener('install', function(e) {
 	caches.open(cacheName) //open new cache
 	    .then(function(cache) {
 		console.log('files cached');
-		return cache.addAll(cachedURLs); //add assets to cache
+		return cache.addAll(cachedURLs); //add core  assets to cache
 	    })
     )
 })
@@ -39,10 +29,20 @@ self.addEventListener('activate', function(e) {
 })
 
 self.addEventListener('fetch', function(e) {
-    console.log('service worker fetching');
+    //prevent default behavior of event request and provide response
     e.respondWith(
-	fetch(e.request).catch(function() {
-	    return caches.match(e.request);
+	//open the cache and then
+	caches.open('restaurant-pages').then(function(cache) {
+	    //return if the request matches anything cached
+	    return cache.match(e.request).then(function (response) {
+		//return either the cached file or fetch the request and then
+		return response || fetch(e.request).then(function(response) {
+		    //add it and the cloned response to the cache
+		    cache.put(e.request, response.clone());
+		    //and return the network response
+		    return response;
+		});
+	    });
 	})
-	    );
-})
+    );
+});

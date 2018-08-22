@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,16 +20,16 @@
   <main id="maincontent">
     <section id="map-container" class="home-map-container">
       <button id="skip-map" title="skip interactive map and view restaurant options and details">skip map</button>
-      <div id="map" class="home-map" title="Map of restaurant locations. Select to see further details."></div>
+      <div id="map" class="home-map" title="Map of restaurant locations. Select to see further details." aria-label="location" role="application"></div>
     </section>
     <section>
       <div class="filter-options" tabIndex=0;>
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="filter-options">
-          <option value="all">All Neighborhoods</option>
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="filter-options" role="listbox">
+          <option value="all" role="option">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-labelledby="filter-options">
-          <option value="all">All Cuisines</option>
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-labelledby="filter-options" role="listbox">
+          <option value="all" role="option">All Cuisines</option>
         </select>
       </div>
       <ul id="restaurants-list"></ul>

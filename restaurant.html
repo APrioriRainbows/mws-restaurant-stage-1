@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
   <!-- Beginning header -->
   <header>
     <!-- Beginning nav -->
-    <nav>
+    <nav aria-label="breadcrumb" role="navigation">
       <!--<h1><a href=".">Restaurant Reviews</a></h1> link edited to work on my personal server-->
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
@@ -34,7 +34,7 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map" title="Map of restaurant locations. Select to see further details."></div>
+      <div id="map" title="Map of restaurant locations. Select to see further details." aria-label="location" role="application"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->

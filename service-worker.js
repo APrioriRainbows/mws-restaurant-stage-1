@@ -1,7 +1,6 @@
 const cacheName = 'restaurant-webapp';
 const cachedURLs = [
 //core assets, which don't include images
-  '/',
   '/css/styles.css',
   '/js/main.js',
   '/js/pk.js',

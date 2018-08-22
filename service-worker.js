@@ -1,4 +1,4 @@
-const cacheName = 'restaurant-pages';
+const cacheName = 'restaurant-webapp';
 const cachedURLs = [
 //core assets, which don't include images
   '/',
@@ -26,13 +26,29 @@ self.addEventListener('install', function(e) {
 
 self.addEventListener('activate', function(e) {
     console.log('service worker activated');
-})
+    e.waitUntil(
+	//get all the keys from cache...
+	caches.keys().then(function(cacheNames) {
+	    return Promise.all(
+		//run a function on each key that..
+		cacheNames.map(function(cache) {
+		    //checks if this cache is the same as the latest one
+		    if (cache !== cacheName) {
+			console.log('clearing old cache');
+			//if it is, then it returns a promise that resolves to true and deletes the cache
+			return caches.delete(cache);
+		    }
+		})
+	    );
+	})
+    );
+});
 
 self.addEventListener('fetch', function(e) {
     //prevent default behavior of event request and provide response
     e.respondWith(
 	//open the cache and then
-	caches.open('restaurant-pages').then(function(cache) {
+	caches.open(cacheName).then(function(cache) {
 	    //return if the request matches anything cached
 	    return cache.match(e.request).then(function (response) {
 		//return either the cached file or fetch the request and then
